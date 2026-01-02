@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.vercel.my_sahayak_in_47ti.twa",
+        "sha256_cert_fingerprints": ["60:D1:2A:F9:C4:DF:0B:F6:19:C4:DF:89:60:2B:5F:5C:D7:73:EE:1C:58:64:0C:56:14:6C:A0:41:5B:57:D0:83"]
+      }
+    }]
