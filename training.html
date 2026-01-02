@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Program | My Sahayak</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#800000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="My Sahayak">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-192x192.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gates-heading { font-family: Georgia, 'Times New Roman', serif; }
+        body { font-family: 'Source Sans Pro', sans-serif; }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-[#800000] shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-3 overflow-hidden">
+                            <img src="Screenshot 2025-09-13 232706.png" alt="My Sahayak logo" class="w-full h-full object-contain">
+                        </div>
+                        <span class="text-white text-xl gates-heading">My Sahayak</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-white hover:text-[#ffd6d6] text-sm">Home</a>
+                    <a href="about.html" class="text-white hover:text-[#ffd6d6] text-sm">About</a>
+                    <a href="services.html" class="text-white hover:text-[#ffd6d6] text-sm">Services</a>
+                    <a href="training.html" class="text-[#ffd6d6] text-sm font-semibold">Training</a>
+                    <a href="team.html" class="text-white hover:text-[#ffd6d6] text-sm">Our Team</a>
+                    <a href="book-service.html" class="bg-white text-[#800000] px-4 py-2 rounded text-sm font-semibold hover:bg-gray-100 transition">Book Now</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white hover:text-gray-200 focus:outline-none p-2">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#800000]">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#800000]">About</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#800000]">Services</a>
+                <a href="training.html" class="block px-3 py-2 text-base font-medium text-[#800000] font-semibold">Training</a>
+                <a href="team.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#800000]">Our Team</a>
+                <a href="book-service.html" class="block px-3 py-2 text-base font-semibold bg-[#800000] text-white rounded mt-2 mx-2 text-center">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-[#800000] text-white py-24">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm uppercase tracking-widest mb-3 opacity-80">Professional Development</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl gates-heading mb-6">Our Training Program</h1>
+            <p class="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">Comprehensive skill development and professional training for all domestic staff to ensure the highest quality service.</p>
+        </div>
+    </section>
+
+    <!-- Training Overview -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <p class="text-sm uppercase tracking-widest text-[#800000] mb-3">Why Training Matters</p>
+                    <h2 class="text-3xl md:text-4xl gates-heading text-gray-900 mb-6">Building Excellence Through Education</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Every member of our workforce undergoes rigorous training before placement. Our comprehensive program covers professional skills, personal development, and safety protocols.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        We partner with industry experts and certified trainers to deliver curriculum that meets international standards while being relevant to Indian households.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-3xl font-light text-[#800000] gates-heading">40+</div>
+                            <p class="text-gray-600 text-sm">Hours of Training</p>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-3xl font-light text-[#800000] gates-heading">100%</div>
+                            <p class="text-gray-600 text-sm">Certification Rate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#800000]/5 rounded-lg p-8">
+                    <h3 class="text-xl gates-heading text-gray-900 mb-6">Training Includes</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 mt-0.5 text-sm flex-shrink-0">✓</span>
+                            <span class="text-gray-700">Hands-on practical sessions with expert trainers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 mt-0.5 text-sm flex-shrink-0">✓</span>
+                            <span class="text-gray-700">Professional communication and etiquette</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 mt-0.5 text-sm flex-shrink-0">✓</span>
+                            <span class="text-gray-700">Safety protocols and emergency response</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 mt-0.5 text-sm flex-shrink-0">✓</span>
+                            <span class="text-gray-700">First aid and basic healthcare</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 mt-0.5 text-sm flex-shrink-0">✓</span>
+                            <span class="text-gray-700">Certification upon completion</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Modules -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-sm uppercase tracking-widest text-[#800000] mb-3">Curriculum</p>
+                <h2 class="text-3xl md:text-4xl gates-heading text-gray-900 mb-4">Training Modules</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- General Training -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-[#800000]">
+                    <h3 class="text-xl gates-heading text-[#800000] mb-6">General Training</h3>
+                    <p class="text-gray-600 mb-6">Foundation skills required for all domestic staff</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#800000] mr-3">✓</span>
+                            Personal grooming and hygiene standards
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#800000] mr-3">✓</span>
+                            Language basics and professional communication
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#800000] mr-3">✓</span>
+                            Emergency situation response
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#800000] mr-3">✓</span>
+                            Basic first aid and safety training
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#800000] mr-3">✓</span>
+                            Politeness and respectful behaviour
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Elderly & Baby Care -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-[#d9a24a]">
+                    <h3 class="text-xl gates-heading text-[#800000] mb-6">Elderly & Baby Care Training</h3>
+                    <p class="text-gray-600 mb-6">Specialized care for vulnerable family members</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#d9a24a] mr-3">✓</span>
+                            Specialized elderly care techniques
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#d9a24a] mr-3">✓</span>
+                            Medication management and reminders
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#d9a24a] mr-3">✓</span>
+                            Infant and toddler nutrition basics
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#d9a24a] mr-3">✓</span>
+                            Safe baby handling and hygiene
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#d9a24a] mr-3">✓</span>
+                            Early childhood stimulation activities
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#d9a24a] mr-3">✓</span>
+                            Emergency protocols for elderly and infants
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Household Skills -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-[#800000]">
+                    <h3 class="text-xl gates-heading text-[#800000] mb-6">Household Skills</h3>
+                    <p class="text-gray-600 mb-6">Professional home management techniques</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#800000] mr-3">✓</span>
+                            Punctuality and professional housekeeping
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#800000] mr-3">✓</span>
+                            Bed making and room organization
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#800000] mr-3">✓</span>
+                            Surface-specific cleaning methods
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#800000] mr-3">✓</span>
+                            Bathroom cleaning and sanitization
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#800000] mr-3">✓</span>
+                            Stain removal and fabric care
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#800000] mr-3">✓</span>
+                            Ironing and garment care
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Cook Training -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border-l-4 border-[#d9a24a]">
+                    <h3 class="text-xl gates-heading text-[#800000] mb-6">Cook Training</h3>
+                    <p class="text-gray-600 mb-6">Culinary skills and kitchen management</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#d9a24a] mr-3">✓</span>
+                            Vegetable washing and preparation
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#d9a24a] mr-3">✓</span>
+                            Kitchen cleanliness and hygiene
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#d9a24a] mr-3">✓</span>
+                            Food safety and storage practices
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#d9a24a] mr-3">✓</span>
+                            Proper usage of oils and spice management
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#d9a24a] mr-3">✓</span>
+                            Modern appliance usage (air fryer, etc.)
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="text-[#d9a24a] mr-3">✓</span>
+                            Multi-cuisine cooking (Italian, Mexican, Continental)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verification -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-sm uppercase tracking-widest text-[#800000] mb-3">Trust & Safety</p>
+                <h2 class="text-3xl md:text-4xl gates-heading text-gray-900 mb-4">Background Verification</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Every staff member undergoes comprehensive verification before placement</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-gray-50 rounded-lg border-b-4 border-[#800000]">
+                    <div class="w-12 h-12 bg-[#800000]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-[#800000]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Police Verification</h3>
+                    <p class="text-sm text-gray-600">Comprehensive background checks</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gray-50 rounded-lg border-b-4 border-[#d9a24a]">
+                    <div class="w-12 h-12 bg-[#d9a24a]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-[#d9a24a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Aadhaar Verification</h3>
+                    <p class="text-sm text-gray-600">Identity validation</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gray-50 rounded-lg border-b-4 border-[#800000]">
+                    <div class="w-12 h-12 bg-[#800000]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-[#800000]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Reference Checks</h3>
+                    <p class="text-sm text-gray-600">Previous employer verification</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gray-50 rounded-lg border-b-4 border-[#d9a24a]">
+                    <div class="w-12 h-12 bg-[#d9a24a]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-[#d9a24a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Document Authentication</h3>
+                    <p class="text-sm text-gray-600">Certificate verification</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-[#800000] text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl gates-heading mb-6">Experience the Difference</h2>
+            <p class="text-xl opacity-90 mb-8">Our trained professionals bring expertise and professionalism to your home</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="book-service.html" class="bg-white text-[#800000] px-8 py-4 rounded font-semibold hover:bg-gray-100 transition text-lg">
+                    Book a Service
+                </a>
+                <a href="services.html" class="border-2 border-white text-white px-8 py-4 rounded font-semibold hover:bg-white/10 transition text-lg">
+                    View Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-white transition">Services</a></li>
+                        <li><a href="training.html" class="hover:text-white transition">Training</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html#cook" class="hover:text-white transition">Cooks</a></li>
+                        <li><a href="services.html#housekeeper" class="hover:text-white transition">Housekeepers</a></li>
+                        <li><a href="services.html#nanny" class="hover:text-white transition">Nannies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">More</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html#nurse" class="hover:text-white transition">Nurses</a></li>
+                        <li><a href="services.html#driver" class="hover:text-white transition">Drivers</a></li>
+                        <li><a href="services.html#japa-maid" class="hover:text-white transition">Japa Maids</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Get Started</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="book-service.html" class="hover:text-white transition">Book Now</a></li>
+                        <li><a href="index.html#pricing" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="index.html#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-gray-500 text-sm pt-8 border-t border-gray-800">
+                <p>© 2024 My Sahayak. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Sahayak - Premium Domestic Staffing Solutions</title>
+	<!-- LottieFiles CDN for animated icons -->
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+	<style>
+	/* Animated maroon border for Training cards on hover (border only) */
+	.training-card-animated {
+		position: relative;
+		z-index: 1;
+		overflow: visible;
+	}
+	.training-card-animated::before {
+		content: "";
+		position: absolute;
+		top: 0; left: 0; right: 0; bottom: 0;
+		border-radius: 1rem;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.3s;
+		border: 3px solid transparent;
+		background: linear-gradient(270deg, #7a0f18, #800000, #d9a24a, #7a0f18);
+		background-size: 400% 400%;
+		-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+		mask-composite: exclude;
+		animation: trainingBorderMove 2.5s linear infinite;
+		z-index: 2;
+		box-sizing: border-box;
+	}
+	.training-card-animated:hover::before {
+		opacity: 1;
+	}
+	@keyframes trainingBorderMove {
+		0% { background-position: 0% 50%; }
+		50% { background-position: 100% 50%; }
+		100% { background-position: 0% 50%; }
+	}
+	/* ...rest of the HTML content from index.html... */

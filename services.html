@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | My Sahayak</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#800000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="My Sahayak">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-192x192.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gates-heading { font-family: Georgia, 'Times New Roman', serif; }
+        body { font-family: 'Source Sans Pro', sans-serif; }
+        .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-[#800000] shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-3 overflow-hidden">
+                            <img src="Screenshot 2025-09-13 232706.png" alt="My Sahayak logo" class="w-full h-full object-contain">
+                        </div>
+                        <span class="text-white text-xl gates-heading">My Sahayak</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-white hover:text-[#ffd6d6] text-sm">Home</a>
+                    <a href="about.html" class="text-white hover:text-[#ffd6d6] text-sm">About</a>
+                    <a href="services.html" class="text-[#ffd6d6] text-sm font-semibold">Services</a>
+                    <a href="training.html" class="text-white hover:text-[#ffd6d6] text-sm">Training</a>
+                    <a href="team.html" class="text-white hover:text-[#ffd6d6] text-sm">Our Team</a>
+                    <a href="book-service.html" class="bg-white text-[#800000] px-4 py-2 rounded text-sm font-semibold hover:bg-gray-100 transition">Book Now</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white hover:text-gray-200 focus:outline-none p-2">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#800000]">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#800000]">About</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-[#800000] font-semibold">Services</a>
+                <a href="training.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#800000]">Training</a>
+                <a href="team.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#800000]">Our Team</a>
+                <a href="book-service.html" class="block px-3 py-2 text-base font-semibold bg-[#800000] text-white rounded mt-2 mx-2 text-center">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-[#800000] text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm uppercase tracking-widest mb-3 opacity-80">What We Offer</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl gates-heading mb-6">Our Services</h1>
+            <p class="text-xl opacity-90 max-w-2xl mx-auto">Comprehensive domestic staffing solutions with verified, trained professionals for every household need</p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Professional Cook -->
+            <div id="cook" class="mb-20 scroll-mt-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-sm uppercase tracking-widest text-[#800000] mb-3">Culinary Excellence</p>
+                        <h2 class="text-3xl md:text-4xl gates-heading text-gray-900 mb-6">Professional Cooks</h2>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Our trained cooks bring culinary expertise to your kitchen, preparing delicious and hygienic meals tailored to your family's preferences and dietary requirements.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Multi-cuisine expertise (Indian, Continental, Chinese)
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Specialized dietary cooking (Jain, Diabetic, etc.)
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Kitchen hygiene & food safety trained
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Party & event cooking available
+                            </li>
+                        </ul>
+                        <a href="book-service.html" class="inline-block bg-[#800000] text-white px-6 py-3 rounded font-semibold hover:bg-[#6a0d14] transition">
+                            Book a Cook →
+                        </a>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-12 flex items-center justify-center">
+                        <img src="Indian maharaj cook .png" alt="Professional Cook" class="w-48 h-48 object-contain">
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="border-gray-200 mb-20">
+            
+            <!-- Housekeeper -->
+            <div id="housekeeper" class="mb-20 scroll-mt-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1 bg-gray-100 rounded-lg p-12 flex items-center justify-center">
+                        <img src="Indian maid graphic  - Copy.png" alt="Housekeeper" class="w-48 h-48 object-contain">
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <p class="text-sm uppercase tracking-widest text-[#800000] mb-3">Home Care</p>
+                        <h2 class="text-3xl md:text-4xl gates-heading text-gray-900 mb-6">Housekeepers & Maids</h2>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Our housekeepers maintain your home with meticulous attention to detail, ensuring cleanliness, organization, and a comfortable living environment for your family.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Deep cleaning & daily maintenance
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Laundry, ironing & wardrobe management
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Surface-specific cleaning trained
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Household organization & inventory
+                            </li>
+                        </ul>
+                        <a href="book-service.html" class="inline-block bg-[#800000] text-white px-6 py-3 rounded font-semibold hover:bg-[#6a0d14] transition">
+                            Book a Housekeeper →
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="border-gray-200 mb-20">
+            
+            <!-- Nanny -->
+            <div id="nanny" class="mb-20 scroll-mt-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-sm uppercase tracking-widest text-[#800000] mb-3">Child Care</p>
+                        <h2 class="text-3xl md:text-4xl gates-heading text-gray-900 mb-6">Nannies</h2>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Our nannies provide loving, professional care for your children, supporting their growth, safety, and development while giving parents peace of mind.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Age-appropriate child engagement
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Infant care & feeding expertise
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Child safety & first aid trained
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Educational activities & homework help
+                            </li>
+                        </ul>
+                        <a href="book-service.html" class="inline-block bg-[#800000] text-white px-6 py-3 rounded font-semibold hover:bg-[#6a0d14] transition">
+                            Book a Nanny →
+                        </a>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-12 flex items-center justify-center">
+                        <img src="Indian nanny graphic.png" alt="Nanny" class="w-48 h-48 object-contain">
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="border-gray-200 mb-20">
+            
+            <!-- Nurse -->
+            <div id="nurse" class="mb-20 scroll-mt-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1 bg-gray-100 rounded-lg p-12 flex items-center justify-center">
+                        <img src="Indian aaya assistin.png" alt="Nurse" class="w-48 h-48 object-contain">
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <p class="text-sm uppercase tracking-widest text-[#800000] mb-3">Health Care</p>
+                        <h2 class="text-3xl md:text-4xl gates-heading text-gray-900 mb-6">Nurses & Caretakers</h2>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Our nurses and caretakers provide compassionate care for elderly family members and patients, ensuring their comfort, health, and dignity at home.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Elder care & companionship
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Medication management & reminders
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Mobility assistance & physiotherapy support
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Post-surgery & recovery care
+                            </li>
+                        </ul>
+                        <a href="book-service.html" class="inline-block bg-[#800000] text-white px-6 py-3 rounded font-semibold hover:bg-[#6a0d14] transition">
+                            Book a Nurse →
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="border-gray-200 mb-20">
+            
+            <!-- Driver -->
+            <div id="driver" class="mb-20 scroll-mt-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-sm uppercase tracking-widest text-[#800000] mb-3">Transportation</p>
+                        <h2 class="text-3xl md:text-4xl gates-heading text-gray-900 mb-6">Professional Drivers</h2>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Our drivers provide safe, reliable transportation for your family, with expertise in navigating city traffic and maintaining vehicle care.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Licensed with clean driving record
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                City navigation expertise
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Vehicle maintenance knowledge
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Professional & courteous service
+                            </li>
+                        </ul>
+                        <a href="book-service.html" class="inline-block bg-[#800000] text-white px-6 py-3 rounded font-semibold hover:bg-[#6a0d14] transition">
+                            Book a Driver →
+                        </a>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-12 flex items-center justify-center">
+                        <img src="Indian driver graphi.png" alt="Driver" class="w-48 h-48 object-contain">
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="border-gray-200 mb-20">
+            
+            <!-- Japa Maid -->
+            <div id="japa-maid" class="mb-20 scroll-mt-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1 bg-gray-100 rounded-lg p-12 flex items-center justify-center">
+                        <img src="Indian manager illus.png" alt="Japa Maid" class="w-48 h-48 object-contain">
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <p class="text-sm uppercase tracking-widest text-[#800000] mb-3">Maternity Care</p>
+                        <h2 class="text-3xl md:text-4xl gates-heading text-gray-900 mb-6">Japa Maids</h2>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Our Japa maids specialize in post-natal care, supporting new mothers and newborns during the crucial recovery period with traditional care practices.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Newborn care & handling
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Post-natal mother care & massage
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Traditional nutrition & lactation support
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <span class="w-6 h-6 bg-[#800000] text-white rounded-full flex items-center justify-center mr-3 text-sm">✓</span>
+                                Baby bathing & hygiene
+                            </li>
+                        </ul>
+                        <a href="book-service.html" class="inline-block bg-[#800000] text-white px-6 py-3 rounded font-semibold hover:bg-[#6a0d14] transition">
+                            Book a Japa Maid →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-[#800000] text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl gates-heading mb-6">Ready to Get Started?</h2>
+            <p class="text-xl opacity-90 mb-8">Book your service today and experience the My Sahayak difference</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="book-service.html" class="bg-white text-[#800000] px-8 py-4 rounded font-semibold hover:bg-gray-100 transition text-lg">
+                    Book a Service
+                </a>
+                <a href="index.html#contact" class="border-2 border-white text-white px-8 py-4 rounded font-semibold hover:bg-white/10 transition text-lg">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#cook" class="hover:text-white transition">Cooks</a></li>
+                        <li><a href="#housekeeper" class="hover:text-white transition">Housekeepers</a></li>
+                        <li><a href="#nanny" class="hover:text-white transition">Nannies</a></li>
+                        <li><a href="#nurse" class="hover:text-white transition">Nurses</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">More Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#driver" class="hover:text-white transition">Drivers</a></li>
+                        <li><a href="#japa-maid" class="hover:text-white transition">Japa Maids</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html#about-us" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="index.html#training" class="hover:text-white transition">Training</a></li>
+                        <li><a href="index.html#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Book</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="book-service.html" class="hover:text-white transition">Book Now</a></li>
+                        <li><a href="index.html#pricing" class="hover:text-white transition">Pricing</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-gray-500 text-sm pt-8 border-t border-gray-800">
+                <p>© 2024 My Sahayak. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

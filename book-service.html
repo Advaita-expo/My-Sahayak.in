@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Service | My Sahayak</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#800000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="My Sahayak">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-192x192.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gates-heading { font-family: Georgia, 'Times New Roman', serif; }
+        body { font-family: 'Source Sans Pro', sans-serif; }
+        .step-indicator { transition: all 0.3s ease; }
+        .step-indicator.active { background-color: #800000; color: white; }
+        .step-indicator.completed { background-color: #22c55e; color: white; }
+        .form-step { display: none; }
+        .form-step.active { display: block; }
+        .service-option { cursor: pointer; transition: all 0.3s ease; }
+        .service-option:hover { border-color: #800000; }
+        .service-option.selected { border-color: #800000; background-color: #fdf5f5; }
+        .tier-option { cursor: pointer; transition: all 0.3s ease; }
+        .tier-option:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .tier-option.selected { ring: 4px; ring-color: #800000; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-[#800000] shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-3 overflow-hidden">
+                            <img src="Screenshot 2025-09-13 232706.png" alt="My Sahayak logo" class="w-full h-full object-contain">
+                        </div>
+                        <span class="text-white text-xl gates-heading">My Sahayak</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-white hover:text-[#ffd6d6] text-sm">Home</a>
+                    <a href="about.html" class="text-white hover:text-[#ffd6d6] text-sm">About</a>
+                    <a href="services.html" class="text-white hover:text-[#ffd6d6] text-sm">Services</a>
+                    <a href="training.html" class="text-white hover:text-[#ffd6d6] text-sm">Training</a>
+                    <a href="team.html" class="text-white hover:text-[#ffd6d6] text-sm">Our Team</a>
+                    <a href="book-service.html" class="bg-white text-[#800000] px-4 py-2 rounded text-sm font-semibold hover:bg-gray-100 transition">Book Now</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white hover:text-gray-200 focus:outline-none p-2">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#800000]">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#800000]">About</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#800000]">Services</a>
+                <a href="training.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#800000]">Training</a>
+                <a href="team.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#800000]">Our Team</a>
+                <a href="book-service.html" class="block px-3 py-2 text-base font-semibold bg-[#800000] text-white rounded mt-2 mx-2 text-center">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Header -->
+    <section class="bg-[#800000] text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p class="text-sm uppercase tracking-widest mb-3 opacity-80">Start Your Journey</p>
+            <h1 class="text-4xl md:text-5xl gates-heading mb-4">Book a Service</h1>
+            <p class="text-lg opacity-90">Complete the form below to request premium domestic staffing services</p>
+        </div>
+    </section>
+
+    <!-- Progress Steps -->
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <div class="flex items-center justify-center space-x-4 md:space-x-8">
+            <div class="flex items-center">
+                <div class="step-indicator active w-10 h-10 rounded-full flex items-center justify-center border-2 border-[#800000] font-semibold" data-step="1">1</div>
+                <span class="ml-2 text-sm font-medium hidden sm:inline">Service</span>
+            </div>
+            <div class="w-12 md:w-24 h-0.5 bg-gray-300"></div>
+            <div class="flex items-center">
+                <div class="step-indicator w-10 h-10 rounded-full flex items-center justify-center border-2 border-gray-300 font-semibold text-gray-400" data-step="2">2</div>
+                <span class="ml-2 text-sm font-medium text-gray-400 hidden sm:inline">Plan</span>
+            </div>
+            <div class="w-12 md:w-24 h-0.5 bg-gray-300"></div>
+            <div class="flex items-center">
+                <div class="step-indicator w-10 h-10 rounded-full flex items-center justify-center border-2 border-gray-300 font-semibold text-gray-400" data-step="3">3</div>
+                <span class="ml-2 text-sm font-medium text-gray-400 hidden sm:inline">Details</span>
+            </div>
+            <div class="w-12 md:w-24 h-0.5 bg-gray-300"></div>
+            <div class="flex items-center">
+                <div class="step-indicator w-10 h-10 rounded-full flex items-center justify-center border-2 border-gray-300 font-semibold text-gray-400" data-step="4">4</div>
+                <span class="ml-2 text-sm font-medium text-gray-400 hidden sm:inline">Confirm</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="max-w-4xl mx-auto px-4 pb-16">
+        <form id="booking-form" class="bg-white rounded-lg shadow-lg p-8">
+            
+            <!-- Step 1: Select Service -->
+            <div class="form-step active" data-step="1">
+                <h2 class="text-2xl gates-heading text-gray-900 mb-2">Select a Service</h2>
+                <p class="text-gray-600 mb-8">Choose the type of domestic staff you need</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <label class="service-option border-2 border-gray-200 rounded-lg p-6 text-center">
+                        <input type="radio" name="service" value="cook" class="sr-only">
+                        <img src="Indian maharaj cook .png" alt="Cook" class="w-16 h-16 mx-auto mb-3 object-contain">
+                        <h3 class="font-semibold text-gray-900">Professional Cook</h3>
+                        <p class="text-sm text-gray-500 mt-1">Expert culinary services</p>
+                    </label>
+                    
+                    <label class="service-option border-2 border-gray-200 rounded-lg p-6 text-center">
+                        <input type="radio" name="service" value="housekeeper" class="sr-only">
+                        <img src="Indian maid graphic  - Copy.png" alt="Housekeeper" class="w-16 h-16 mx-auto mb-3 object-contain">
+                        <h3 class="font-semibold text-gray-900">Housekeeper</h3>
+                        <p class="text-sm text-gray-500 mt-1">Complete home care</p>
+                    </label>
+                    
+                    <label class="service-option border-2 border-gray-200 rounded-lg p-6 text-center">
+                        <input type="radio" name="service" value="nanny" class="sr-only">
+                        <img src="Indian nanny graphic.png" alt="Nanny" class="w-16 h-16 mx-auto mb-3 object-contain">
+                        <h3 class="font-semibold text-gray-900">Nanny</h3>
+                        <p class="text-sm text-gray-500 mt-1">Child care specialist</p>
+                    </label>
+                    
+                    <label class="service-option border-2 border-gray-200 rounded-lg p-6 text-center">
+                        <input type="radio" name="service" value="nurse" class="sr-only">
+                        <img src="Indian aaya assistin.png" alt="Nurse" class="w-16 h-16 mx-auto mb-3 object-contain">
+                        <h3 class="font-semibold text-gray-900">Nurse / Caretaker</h3>
+                        <p class="text-sm text-gray-500 mt-1">Elder & patient care</p>
+                    </label>
+                    
+                    <label class="service-option border-2 border-gray-200 rounded-lg p-6 text-center">
+                        <input type="radio" name="service" value="driver" class="sr-only">
+                        <img src="Indian driver graphi.png" alt="Driver" class="w-16 h-16 mx-auto mb-3 object-contain">
+                        <h3 class="font-semibold text-gray-900">Driver</h3>
+                        <p class="text-sm text-gray-500 mt-1">Professional chauffeur</p>
+                    </label>
+                    
+                    <label class="service-option border-2 border-gray-200 rounded-lg p-6 text-center">
+                        <input type="radio" name="service" value="japa-maid" class="sr-only">
+                        <img src="Indian manager illus.png" alt="Japa Maid" class="w-16 h-16 mx-auto mb-3 object-contain">
+                        <h3 class="font-semibold text-gray-900">Japa Maid</h3>
+                        <p class="text-sm text-gray-500 mt-1">Post-natal care</p>
+                    </label>
+                </div>
+                
+                <div class="mt-8 flex justify-end">
+                    <button type="button" class="next-btn bg-[#800000] text-white px-8 py-3 rounded font-semibold hover:bg-[#6a0d14] transition disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                        Continue →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Select Plan -->
+            <div class="form-step" data-step="2">
+                <h2 class="text-2xl gates-heading text-gray-900 mb-2">Choose Your Plan</h2>
+                <p class="text-gray-600 mb-8">Select a service tier based on experience level</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <label class="tier-option border-2 border-gray-200 rounded-lg p-6 text-center bg-white">
+                        <input type="radio" name="tier" value="premium" class="sr-only">
+                        <p class="text-xs uppercase tracking-widest text-[#800000] mb-2">Tier A</p>
+                        <h3 class="text-xl gates-heading text-gray-900 mb-4">Premium</h3>
+                        <div class="text-4xl font-light text-[#800000] mb-1">₹40,000</div>
+                        <p class="text-sm text-gray-500 mb-4">per month</p>
+                        <div class="border-t pt-4">
+                            <p class="text-gray-700">5+ Years Experience</p>
+                            <p class="text-sm text-gray-500 mt-2">Highly skilled professionals</p>
+                        </div>
+                    </label>
+                    
+                    <label class="tier-option border-2 border-[#d9a24a] rounded-lg p-6 text-center bg-white relative">
+                        <input type="radio" name="tier" value="standard" class="sr-only">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#d9a24a] text-white px-3 py-1 rounded text-xs font-semibold uppercase">Popular</div>
+                        <p class="text-xs uppercase tracking-widest text-[#800000] mb-2">Tier B</p>
+                        <h3 class="text-xl gates-heading text-gray-900 mb-4">Standard</h3>
+                        <div class="text-4xl font-light text-[#800000] mb-1">₹30,000</div>
+                        <p class="text-sm text-gray-500 mb-4">per month</p>
+                        <div class="border-t pt-4">
+                            <p class="text-gray-700">3-5 Years Experience</p>
+                            <p class="text-sm text-gray-500 mt-2">Well-trained professionals</p>
+                        </div>
+                    </label>
+                    
+                    <label class="tier-option border-2 border-gray-200 rounded-lg p-6 text-center bg-white">
+                        <input type="radio" name="tier" value="basic" class="sr-only">
+                        <p class="text-xs uppercase tracking-widest text-[#800000] mb-2">Tier C</p>
+                        <h3 class="text-xl gates-heading text-gray-900 mb-4">Basic</h3>
+                        <div class="text-4xl font-light text-[#800000] mb-1">₹20,000</div>
+                        <p class="text-sm text-gray-500 mb-4">per month</p>
+                        <div class="border-t pt-4">
+                            <p class="text-gray-700">1-3 Years Experience</p>
+                            <p class="text-sm text-gray-500 mt-2">Trained & verified staff</p>
+                        </div>
+                    </label>
+                </div>
+                
+                <div class="mt-8 flex justify-between">
+                    <button type="button" class="prev-btn text-gray-600 px-6 py-3 rounded font-semibold hover:text-gray-900 transition">
+                        ← Back
+                    </button>
+                    <button type="button" class="next-btn bg-[#800000] text-white px-8 py-3 rounded font-semibold hover:bg-[#6a0d14] transition disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                        Continue →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Personal Details -->
+            <div class="form-step" data-step="3">
+                <h2 class="text-2xl gates-heading text-gray-900 mb-2">Your Details</h2>
+                <p class="text-gray-600 mb-8">Tell us about yourself and your requirements</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                        <input type="text" name="fullName" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#800000] focus:border-transparent outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                        <input type="tel" name="phone" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#800000] focus:border-transparent outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                        <input type="email" name="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#800000] focus:border-transparent outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">City *</label>
+                        <select name="city" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#800000] focus:border-transparent outline-none">
+                            <option value="">Select City</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Delhi NCR">Delhi NCR (Coming Soon)</option>
+                            <option value="Pune">Pune (Coming Soon)</option>
+                            <option value="Bangalore">Bangalore (Coming Soon)</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Full Address *</label>
+                        <textarea name="address" rows="2" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#800000] focus:border-transparent outline-none"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Start Date</label>
+                        <input type="date" name="startDate" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#800000] focus:border-transparent outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Number of Family Members</label>
+                        <select name="familySize" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#800000] focus:border-transparent outline-none">
+                            <option value="">Select</option>
+                            <option value="1-2">1-2 members</option>
+                            <option value="3-4">3-4 members</option>
+                            <option value="5-6">5-6 members</option>
+                            <option value="7+">7+ members</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Special Requirements / Notes</label>
+                        <textarea name="requirements" rows="3" placeholder="Any specific requirements, preferences, or special needs..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#800000] focus:border-transparent outline-none"></textarea>
+                    </div>
+                </div>
+                
+                <div class="mt-8 flex justify-between">
+                    <button type="button" class="prev-btn text-gray-600 px-6 py-3 rounded font-semibold hover:text-gray-900 transition">
+                        ← Back
+                    </button>
+                    <button type="button" class="next-btn bg-[#800000] text-white px-8 py-3 rounded font-semibold hover:bg-[#6a0d14] transition">
+                        Review Booking →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 4: Confirmation -->
+            <div class="form-step" data-step="4">
+                <h2 class="text-2xl gates-heading text-gray-900 mb-2">Review & Confirm</h2>
+                <p class="text-gray-600 mb-8">Please review your booking details before submitting</p>
+                
+                <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                    <h3 class="font-semibold text-gray-900 mb-4 text-lg">Booking Summary</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="text-sm text-gray-500">Service</p>
+                            <p class="font-medium text-gray-900" id="summary-service">-</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Plan</p>
+                            <p class="font-medium text-gray-900" id="summary-tier">-</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Monthly Cost</p>
+                            <p class="font-medium text-[#800000] text-xl" id="summary-price">-</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Start Date</p>
+                            <p class="font-medium text-gray-900" id="summary-date">-</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                    <h3 class="font-semibold text-gray-900 mb-4 text-lg">Contact Information</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="text-sm text-gray-500">Name</p>
+                            <p class="font-medium text-gray-900" id="summary-name">-</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Phone</p>
+                            <p class="font-medium text-gray-900" id="summary-phone">-</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Email</p>
+                            <p class="font-medium text-gray-900" id="summary-email">-</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">City</p>
+                            <p class="font-medium text-gray-900" id="summary-city">-</p>
+                        </div>
+                        <div class="md:col-span-2">
+                            <p class="text-sm text-gray-500">Address</p>
+                            <p class="font-medium text-gray-900" id="summary-address">-</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-[#fdf5f5] border border-[#800000]/20 rounded-lg p-4 mb-6">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" name="terms" id="terms-checkbox" class="mt-1 mr-3 w-5 h-5 accent-[#800000]">
+                        <span class="text-sm text-gray-700">I agree to the <a href="#" class="text-[#800000] underline">Terms & Conditions</a> and <a href="#" class="text-[#800000] underline">Privacy Policy</a>. I understand that My Sahayak will contact me to confirm and finalize this booking.</span>
+                    </label>
+                    <p id="terms-error" class="text-red-600 text-sm mt-2 hidden">⚠️ Please accept the terms and conditions to proceed.</p>
+                </div>
+                
+                <div class="mt-8 flex justify-between">
+                    <button type="button" class="prev-btn text-gray-600 px-6 py-3 rounded font-semibold hover:text-gray-900 transition">
+                        ← Back
+                    </button>
+                    <button type="button" id="confirm-booking-btn" class="bg-[#800000] text-white px-8 py-3 rounded font-semibold hover:bg-[#6a0d14] transition">
+                        Confirm Booking
+                    </button>
+                </div>
+            </div>
+
+            <!-- Success Message -->
+            <div class="form-step" data-step="success">
+                <div class="text-center py-12">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl gates-heading text-gray-900 mb-4">Booking Submitted!</h2>
+                    <p class="text-lg text-gray-600 mb-8 max-w-md mx-auto">Thank you for choosing My Sahayak. Our team will contact you within 24 hours to confirm your booking.</p>
+                    <div class="bg-gray-50 rounded-lg p-6 max-w-sm mx-auto mb-8">
+                        <p class="text-sm text-gray-500 mb-1">Booking Reference</p>
+                        <p class="text-2xl font-mono font-bold text-[#800000]" id="booking-reference">MS-XXXXXX</p>
+                    </div>
+                    <a href="index.html" class="inline-block bg-[#800000] text-white px-8 py-3 rounded font-semibold hover:bg-[#6a0d14] transition">
+                        Return to Home
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-400">© 2024 My Sahayak. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form navigation
+        const form = document.getElementById('booking-form');
+        const steps = document.querySelectorAll('.form-step');
+        const stepIndicators = document.querySelectorAll('.step-indicator');
+        let currentStep = 1;
+
+        // Service selection
+        const serviceOptions = document.querySelectorAll('.service-option');
+        serviceOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                serviceOptions.forEach(o => o.classList.remove('selected'));
+                option.classList.add('selected');
+                option.querySelector('input').checked = true;
+                document.querySelector('[data-step="1"] .next-btn').disabled = false;
+            });
+        });
+
+        // Tier selection
+        const tierOptions = document.querySelectorAll('.tier-option');
+        tierOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                tierOptions.forEach(o => o.classList.remove('selected'));
+                option.classList.add('selected');
+                option.querySelector('input').checked = true;
+                document.querySelector('[data-step="2"] .next-btn').disabled = false;
+            });
+        });
+
+        // Navigation buttons
+        document.querySelectorAll('.next-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (currentStep < 4) {
+                    goToStep(currentStep + 1);
+                }
+            });
+        });
+
+        document.querySelectorAll('.prev-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (currentStep > 1) {
+                    goToStep(currentStep - 1);
+                }
+            });
+        });
+
+        function goToStep(step) {
+            // Hide all steps
+            steps.forEach(s => s.classList.remove('active'));
+            
+            // Show target step
+            document.querySelector(`.form-step[data-step="${step}"]`).classList.add('active');
+            
+            // Update indicators
+            stepIndicators.forEach(indicator => {
+                const indicatorStep = parseInt(indicator.dataset.step);
+                indicator.classList.remove('active', 'completed');
+                if (indicatorStep < step) {
+                    indicator.classList.add('completed');
+                } else if (indicatorStep === step) {
+                    indicator.classList.add('active');
+                }
+            });
+            
+            currentStep = step;
+            
+            // Update summary on step 4
+            if (step === 4) {
+                updateSummary();
+            }
+            
+            // Scroll to top of form
+            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function updateSummary() {
+            const serviceNames = {
+                'cook': 'Professional Cook',
+                'housekeeper': 'Housekeeper',
+                'nanny': 'Nanny',
+                'nurse': 'Nurse / Caretaker',
+                'driver': 'Driver',
+                'japa-maid': 'Japa Maid'
+            };
+            
+            const tierPrices = {
+                'premium': '₹40,000/month',
+                'standard': '₹30,000/month',
+                'basic': '₹20,000/month'
+            };
+            
+            const tierNames = {
+                'premium': 'Premium (Tier A)',
+                'standard': 'Standard (Tier B)',
+                'basic': 'Basic (Tier C)'
+            };
+
+            const service = form.querySelector('input[name="service"]:checked')?.value;
+            const tier = form.querySelector('input[name="tier"]:checked')?.value;
+            
+            document.getElementById('summary-service').textContent = serviceNames[service] || '-';
+            document.getElementById('summary-tier').textContent = tierNames[tier] || '-';
+            document.getElementById('summary-price').textContent = tierPrices[tier] || '-';
+            document.getElementById('summary-date').textContent = form.querySelector('input[name="startDate"]').value || 'To be decided';
+            document.getElementById('summary-name').textContent = form.querySelector('input[name="fullName"]').value || '-';
+            document.getElementById('summary-phone').textContent = form.querySelector('input[name="phone"]').value || '-';
+            document.getElementById('summary-email').textContent = form.querySelector('input[name="email"]').value || '-';
+            document.getElementById('summary-city').textContent = form.querySelector('select[name="city"]').value || '-';
+            document.getElementById('summary-address').textContent = form.querySelector('textarea[name="address"]').value || '-';
+        }
+
+        // Form submission
+        document.getElementById('confirm-booking-btn').addEventListener('click', async () => {
+            // Check if terms checkbox is checked
+            const termsCheckbox = document.getElementById('terms-checkbox');
+            const termsError = document.getElementById('terms-error');
+            
+            if (!termsCheckbox.checked) {
+                termsError.classList.remove('hidden');
+                termsCheckbox.focus();
+                return;
+            }
+            termsError.classList.add('hidden');
+            
+            // Google Apps Script Web App URL
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx-yL8WfHC3M73PLHvghE_T97fxiwrLdqQIET9liTOATz2XOlGktesCl3pH866nqrPU/exec';
+            
+            // Generate booking reference
+            const reference = 'MS-' + Date.now().toString(36).toUpperCase();
+            document.getElementById('booking-reference').textContent = reference;
+            
+            // Get form values
+            const serviceNames = {
+                'cook': 'Professional Cook',
+                'housekeeper': 'Housekeeper',
+                'nanny': 'Nanny',
+                'nurse': 'Nurse / Caretaker',
+                'driver': 'Driver',
+                'japa-maid': 'Japa Maid'
+            };
+            
+            const tierPrices = {
+                'premium': '₹40,000/month',
+                'standard': '₹30,000/month',
+                'basic': '₹20,000/month'
+            };
+            
+            const tierNames = {
+                'premium': 'Premium (Tier A)',
+                'standard': 'Standard (Tier B)',
+                'basic': 'Basic (Tier C)'
+            };
+            
+            const service = form.querySelector('input[name="service"]:checked')?.value;
+            const tier = form.querySelector('input[name="tier"]:checked')?.value;
+            
+            // Prepare data for Google Sheets
+            const bookingData = {
+                bookingReference: reference,
+                service: serviceNames[service] || '',
+                tier: tierNames[tier] || '',
+                price: tierPrices[tier] || '',
+                fullName: form.querySelector('input[name="fullName"]').value,
+                phone: form.querySelector('input[name="phone"]').value,
+                email: form.querySelector('input[name="email"]').value,
+                city: form.querySelector('select[name="city"]').value,
+                address: form.querySelector('textarea[name="address"]').value,
+                startDate: form.querySelector('input[name="startDate"]').value || 'To be decided',
+                familySize: form.querySelector('select[name="familySize"]').value || 'Not specified',
+                requirements: form.querySelector('textarea[name="requirements"]').value || 'None'
+            };
+            
+            // Send to Google Sheets using fetch with form data
+            try {
+                const formData = new FormData();
+                formData.append('data', JSON.stringify(bookingData));
+                
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    body: formData
+                }).then(response => {
+                    console.log('Booking submitted to Google Sheets:', bookingData);
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
+            } catch (error) {
+                console.error('Error submitting to Google Sheets:', error);
+            }
+            
+            // Show success step
+            steps.forEach(s => s.classList.remove('active'));
+            document.querySelector('.form-step[data-step="success"]').classList.add('active');
+            
+            // Hide progress indicators
+            document.querySelector('.flex.items-center.justify-center').style.display = 'none';
+        });
+    </script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
