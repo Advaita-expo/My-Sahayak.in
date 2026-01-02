@@ -30,7 +30,7 @@
         .service-option.selected { border-color: #800000; background-color: #fdf5f5; }
         .tier-option { cursor: pointer; transition: all 0.3s ease; }
         .tier-option:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .tier-option.selected { ring: 4px; ring-color: #800000; }
+        .tier-option.selected { border-color: #800000 !important; background-color: #fdf5f5; box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.2); }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -144,7 +144,7 @@
                     <label class="service-option border-2 border-gray-200 rounded-lg p-6 text-center">
                         <input type="radio" name="service" value="nurse" class="sr-only">
                         <img src="Indian aaya assistin.png" alt="Nurse" class="w-16 h-16 mx-auto mb-3 object-contain">
-                        <h3 class="font-semibold text-gray-900">Nurse / Caretaker</h3>
+                        <h3 class="font-semibold text-gray-900">Nurse / Elderly Caretaker</h3>
                         <p class="text-sm text-gray-500 mt-1">Elder & patient care</p>
                     </label>
                     
@@ -466,7 +466,7 @@
                 'cook': 'Professional Cook',
                 'housekeeper': 'Housekeeper',
                 'nanny': 'Nanny',
-                'nurse': 'Nurse / Caretaker',
+                'nurse': 'Nurse / Elderly Caretaker',
                 'driver': 'Driver',
                 'japa-maid': 'Japa Maid'
             };
@@ -522,7 +522,7 @@
                 'cook': 'Professional Cook',
                 'housekeeper': 'Housekeeper',
                 'nanny': 'Nanny',
-                'nurse': 'Nurse / Caretaker',
+                'nurse': 'Nurse / Elderly Caretaker',
                 'driver': 'Driver',
                 'japa-maid': 'Japa Maid'
             };
