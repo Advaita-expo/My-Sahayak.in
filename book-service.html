@@ -129,11 +129,7 @@
         <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg mb-8">
             <h3 class="font-semibold text-gray-900 mb-3">Sign in with Google</h3>
             <p class="text-sm text-gray-600 mb-4">Sign in with your Google account to auto-fill your details and track your bookings</p>
-            <div id="g_id_onload"
-                 data-client_id="30411134820-tmj5jggvaj98q5fc757tsr11nas3vaad.apps.googleusercontent.com"
-                 data-callback="handleCredentialResponse">
-            </div>
-            <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline"></div>
+            <div id="google-signin-button"></div>
             <div id="user-info" class="mt-4 hidden bg-white p-4 rounded border border-blue-200">
                 <p class="text-sm text-gray-600">Signed in as: <span id="user-email" class="font-semibold text-gray-900"></span></p>
                 <button type="button" id="sign-out-btn" class="text-sm text-blue-600 hover:text-blue-800 mt-2">Sign out</button>
@@ -631,34 +627,33 @@
             // Show user info
             document.getElementById('user-email').textContent = userInfo.email;
             document.getElementById('user-info').classList.remove('hidden');
-            
-            // Hide sign-in container
-            document.querySelector('.g_id_onload').parentElement.style.display = 'none';
+            document.getElementById('google-signin-button').style.display = 'none';
             
             console.log('User signed in:', userInfo);
         }
         
         // Initialize Google Sign-In when page loads
         window.addEventListener('load', function() {
-            if (typeof google !== 'undefined' && google.accounts) {
+            try {
                 google.accounts.id.initialize({
                     client_id: '30411134820-tmj5jggvaj98q5fc757tsr11nas3vaad.apps.googleusercontent.com',
                     callback: handleCredentialResponse,
-                    auto_select: false
+                    auto_select: false,
+                    ux_mode: 'popup'
                 });
                 
                 // Render the sign-in button
                 google.accounts.id.renderButton(
-                    document.querySelector('.g_id_signin'),
+                    document.getElementById('google-signin-button'),
                     {
                         theme: 'outline',
                         size: 'large',
-                        type: 'standard',
-                        text: 'signin_with'
+                        type: 'standard'
                     }
                 );
-            } else {
-                console.error('Google Sign-In library not loaded');
+                console.log('Google Sign-In initialized successfully');
+            } catch (error) {
+                console.error('Error initializing Google Sign-In:', error);
             }
         });
         
@@ -666,8 +661,7 @@
         const signOutBtn = document.getElementById('sign-out-btn');
         if (signOutBtn) {
             signOutBtn.addEventListener('click', function() {
-                google.accounts.id.disableAutoSelect();
-                document.querySelector('.g_id_signin').parentElement.style.display = 'block';
+                document.getElementById('google-signin-button').style.display = 'block';
                 document.getElementById('user-info').classList.add('hidden');
                 document.getElementById('booking-form').querySelector('input[name="fullName"]').value = '';
                 document.getElementById('booking-form').querySelector('input[name="email"]').value = '';
