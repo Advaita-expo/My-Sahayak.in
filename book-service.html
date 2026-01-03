@@ -632,31 +632,47 @@
             document.getElementById('user-email').textContent = userInfo.email;
             document.getElementById('user-info').classList.remove('hidden');
             
-            // Hide sign-in button
-            document.querySelector('.g_id_signin').style.display = 'none';
+            // Hide sign-in container
+            document.querySelector('.g_id_onload').parentElement.style.display = 'none';
             
             console.log('User signed in:', userInfo);
         }
         
-        window.onload = function () {
-            google.accounts.id.initialize({
-                client_id: '30411134820-tmj5jggvaj98q5fc757tsr11nas3vaad.apps.googleusercontent.com',
-                callback: handleCredentialResponse
-            });
-            google.accounts.id.renderButton(
-                document.querySelector('.g_id_signin'),
-                { theme: 'outline', size: 'large' }
-            );
-        };
+        // Initialize Google Sign-In when page loads
+        window.addEventListener('load', function() {
+            if (typeof google !== 'undefined' && google.accounts) {
+                google.accounts.id.initialize({
+                    client_id: '30411134820-tmj5jggvaj98q5fc757tsr11nas3vaad.apps.googleusercontent.com',
+                    callback: handleCredentialResponse,
+                    auto_select: false
+                });
+                
+                // Render the sign-in button
+                google.accounts.id.renderButton(
+                    document.querySelector('.g_id_signin'),
+                    {
+                        theme: 'outline',
+                        size: 'large',
+                        type: 'standard',
+                        text: 'signin_with'
+                    }
+                );
+            } else {
+                console.error('Google Sign-In library not loaded');
+            }
+        });
         
         // Sign out functionality
-        document.getElementById('sign-out-btn').addEventListener('click', function() {
-            google.accounts.id.disableAutoSelect();
-            document.querySelector('.g_id_signin').style.display = 'block';
-            document.getElementById('user-info').classList.add('hidden');
-            document.getElementById('booking-form').querySelector('input[name="fullName"]').value = '';
-            document.getElementById('booking-form').querySelector('input[name="email"]').value = '';
-        });
+        const signOutBtn = document.getElementById('sign-out-btn');
+        if (signOutBtn) {
+            signOutBtn.addEventListener('click', function() {
+                google.accounts.id.disableAutoSelect();
+                document.querySelector('.g_id_signin').parentElement.style.display = 'block';
+                document.getElementById('user-info').classList.add('hidden');
+                document.getElementById('booking-form').querySelector('input[name="fullName"]').value = '';
+                document.getElementById('booking-form').querySelector('input[name="email"]').value = '';
+            });
+        }
     </script>
     <script>
         // Mobile menu toggle
