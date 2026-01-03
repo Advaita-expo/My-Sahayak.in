@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <!-- Google Analytics -->
+    <!-- Replace G-XXXXXXXXXX with your Google Analytics ID from Google Analytics dashboard -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -129,7 +130,7 @@
             <h3 class="font-semibold text-gray-900 mb-3">Sign in with Google</h3>
             <p class="text-sm text-gray-600 mb-4">Sign in with your Google account to auto-fill your details and track your bookings</p>
             <div id="g_id_onload"
-                 data-client_id="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
+                 data-client_id="30411134820-tmj5jggvaj98q5fc757tsr11nas3vaad.apps.googleusercontent.com"
                  data-callback="handleCredentialResponse">
             </div>
             <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline"></div>
@@ -639,7 +640,7 @@
         
         window.onload = function () {
             google.accounts.id.initialize({
-                client_id: 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com',
+                client_id: '30411134820-tmj5jggvaj98q5fc757tsr11nas3vaad.apps.googleusercontent.com',
                 callback: handleCredentialResponse
             });
             google.accounts.id.renderButton(

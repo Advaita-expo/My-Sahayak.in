@@ -4,7 +4,8 @@ from datetime import datetime
 
 # Set up Google Sheets API credentials
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SHEET_NAME = 'My Sahayak Bookings'
+SPREADSHEET_NAME = 'My Sahayak Database'
+WORKSHEET_NAME = 'My Sahayak Data'
 
 def initialize_google_sheets():
     """
@@ -49,8 +50,8 @@ def append_booking_to_sheets(booking_data):
             return False
         
         # Open the spreadsheet
-        spreadsheet = client.open(SHEET_NAME)
-        worksheet = spreadsheet.sheet1
+        spreadsheet = client.open(SPREADSHEET_NAME)
+        worksheet = spreadsheet.worksheet(WORKSHEET_NAME)
         
         # Prepare row data
         row = [
@@ -85,8 +86,8 @@ def get_all_bookings():
         if not client:
             return []
         
-        spreadsheet = client.open(SHEET_NAME)
-        worksheet = spreadsheet.sheet1
+        spreadsheet = client.open(SPREADSHEET_NAME)
+        worksheet = spreadsheet.worksheet(WORKSHEET_NAME)
         records = worksheet.get_all_records()
         return records
         
