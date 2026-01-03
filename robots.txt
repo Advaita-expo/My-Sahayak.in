@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /__pycache__/
+Disallow: /.git/
+Disallow: /.vscode/
+
+Sitemap: https://www.mysahayak.in/sitemap.xml
+
+# Allow search engines to crawl all public pages
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
