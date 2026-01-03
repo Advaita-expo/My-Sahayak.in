@@ -15,20 +15,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-192x192.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Google Analytics -->
-    <!-- Replace G-XXXXXXXXXX with your Google Analytics ID from Google Analytics dashboard -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
     <style>
         .gates-heading { font-family: Georgia, 'Times New Roman', serif; }
         body { font-family: 'Source Sans Pro', sans-serif; }
@@ -125,17 +114,6 @@
 
     <!-- Booking Form -->
     <div class="max-w-4xl mx-auto px-4 pb-16">
-        <!-- Google Sign-In Section -->
-        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg mb-8">
-            <h3 class="font-semibold text-gray-900 mb-3">Sign in with Google</h3>
-            <p class="text-sm text-gray-600 mb-4">Sign in with your Google account to auto-fill your details and track your bookings</p>
-            <div id="google-signin-button"></div>
-            <div id="user-info" class="mt-4 hidden bg-white p-4 rounded border border-blue-200">
-                <p class="text-sm text-gray-600">Signed in as: <span id="user-email" class="font-semibold text-gray-900"></span></p>
-                <button type="button" id="sign-out-btn" class="text-sm text-blue-600 hover:text-blue-800 mt-2">Sign out</button>
-            </div>
-        </div>
-        
         <form id="booking-form" class="bg-white rounded-lg shadow-lg p-8">
             
             <!-- Step 1: Select Service -->
@@ -606,67 +584,6 @@
             // Hide progress indicators
             document.querySelector('.flex.items-center.justify-center').style.display = 'none';
         });
-    </script>
-    <script>
-        // Google Sign-In Handler
-        function handleCredentialResponse(response) {
-            // Decode the JWT token
-            const base64Url = response.credential.split('.')[1];
-            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            }).join(''));
-            
-            const userInfo = JSON.parse(jsonPayload);
-            
-            // Store user info in form
-            const form = document.getElementById('booking-form');
-            form.querySelector('input[name="fullName"]').value = userInfo.name;
-            form.querySelector('input[name="email"]').value = userInfo.email;
-            
-            // Show user info
-            document.getElementById('user-email').textContent = userInfo.email;
-            document.getElementById('user-info').classList.remove('hidden');
-            document.getElementById('google-signin-button').style.display = 'none';
-            
-            console.log('User signed in:', userInfo);
-        }
-        
-        // Initialize Google Sign-In when page loads
-        window.addEventListener('load', function() {
-            try {
-                google.accounts.id.initialize({
-                    client_id: '30411134820-tmj5jggvaj98q5fc757tsr11nas3vaad.apps.googleusercontent.com',
-                    callback: handleCredentialResponse,
-                    auto_select: false,
-                    ux_mode: 'popup'
-                });
-                
-                // Render the sign-in button
-                google.accounts.id.renderButton(
-                    document.getElementById('google-signin-button'),
-                    {
-                        theme: 'outline',
-                        size: 'large',
-                        type: 'standard'
-                    }
-                );
-                console.log('Google Sign-In initialized successfully');
-            } catch (error) {
-                console.error('Error initializing Google Sign-In:', error);
-            }
-        });
-        
-        // Sign out functionality
-        const signOutBtn = document.getElementById('sign-out-btn');
-        if (signOutBtn) {
-            signOutBtn.addEventListener('click', function() {
-                document.getElementById('google-signin-button').style.display = 'block';
-                document.getElementById('user-info').classList.add('hidden');
-                document.getElementById('booking-form').querySelector('input[name="fullName"]').value = '';
-                document.getElementById('booking-form').querySelector('input[name="email"]').value = '';
-            });
-        }
     </script>
     <script>
         // Mobile menu toggle
