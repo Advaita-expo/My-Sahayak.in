@@ -25,3 +25,8 @@ npm-debug.log*
 # Temporary files
 *.tmp
 *.temp
+
+# Sensitive credentials
+backend/google_credentials.json
+**/google_credentials.json
+*.json.secret
