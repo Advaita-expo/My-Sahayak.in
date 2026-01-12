@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Sahayak | Domestic Staffing Solutions in India</title>
+    <title>My Sahayak - Premium Domestic Staffing Solutions</title>
     <meta name="google-site-verification" content="6aDbTOM2tReEddKNLoVJGu49NBAHg5KPYu44c90ZRek" />
-    <meta name="description" content="My Sahayak offers trusted domestic staffing solutions in India. Find trained maids, cooks, nannies, and more for your home. Book reliable household help online now!" />
     
     <!-- PWA Meta Tags -->
     <meta name="theme-color" content="#800000">
@@ -37,42 +36,7 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-XXXXXXXXXX');
-        </script>
-
-        <!-- Update Popup for Service Worker -->
-        <script>
-        // Listen for service worker update messages
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.addEventListener('message', event => {
-                if (event.data && (event.data.type === 'UPDATE_AVAILABLE' || event.data.type === 'UPDATED')) {
-                    showUpdatePopup();
-                }
-            });
-        }
-
-        // Show update popup
-        function showUpdatePopup() {
-            // Create popup element
-            let popup = document.createElement('div');
-            popup.id = 'update-popup';
-            popup.style.position = 'fixed';
-            popup.style.bottom = '32px';
-            popup.style.left = '50%';
-            popup.style.transform = 'translateX(-50%)';
-            popup.style.background = '#800000';
-            popup.style.color = '#fff';
-            popup.style.padding = '1.25rem 2rem';
-            popup.style.borderRadius = '1rem';
-            popup.style.boxShadow = '0 8px 32px rgba(0,0,0,0.18)';
-            popup.style.zIndex = '9999';
-            popup.style.fontSize = '1.1rem';
-            popup.innerHTML = '<strong>New update available!</strong> <button id="refresh-btn" style="margin-left:1.5rem;background:#d9a24a;color:#800000;padding:0.5rem 1.2rem;border:none;border-radius:0.5rem;font-weight:600;cursor:pointer;">Update Now</button>';
-            document.body.appendChild(popup);
-            document.getElementById('refresh-btn').onclick = function() {
-                window.location.reload();
-            };
-        }
-        </script>
+    </script>
     <style>
     /* Animated border for Training cards on hover (border only) */
     .training-card-animated {
@@ -491,8 +455,8 @@
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
                         <div class="flex items-center">
-                            <div class="w-20 h-20 rounded-lg flex items-center justify-center mr-3 overflow-hidden logo-header cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                                <img src="ChatGPT Image Jan 12, 2026, 04_19_04 PM.png" alt="My Sahayak logo" class="w-full h-full object-contain logo-header-img">
+                            <div class="rounded-lg flex items-center justify-center mr-3 overflow-hidden logo-header cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                                <img src="Screenshot 2025-09-13 232706.png" alt="My Sahayak logo" class="w-full h-full object-contain logo-header-img">
                             </div>
  
                         </div>
@@ -689,9 +653,9 @@
                         <!-- Professional Chef -->
                         <div class="service-card service-card-animated bg-white p-4 sm:p-6 rounded-lg shadow-md flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 px-3">
                             <div class="mb-4 flex justify-center">
-                                <img src="Indian maharaj cook .png" alt="Cook" style="max-width:64px; border-radius:0.75rem; box-shadow:0 2px 12px rgba(0,0,0,0.10);">
+                                <img src="Indian maharaj cook .png" alt="Professional Cook" style="max-width:64px; border-radius:0.75rem; box-shadow:0 2px 12px rgba(0,0,0,0.10);">
                             </div>
-                            <h3 class="text-xl font-semibold mb-3 text-center">Cooks</h3>
+                            <h3 class="text-xl font-semibold mb-3 text-center">Professional Cooks</h3>
                         </div>
                         
                         <!-- Housekeeper -->
@@ -710,15 +674,21 @@
                             <h3 class="text-xl font-semibold mb-3 text-center">Nannies</h3>
                         </div>
                         
-                        <!-- Elderly care -->
+                        <!-- Nurse/Elderly Care -->
                         <div class="service-card service-card-animated bg-white p-6 rounded-lg shadow-md flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 px-3">
                             <div class="mb-4 flex justify-center">
-                                <img src="Indian aaya assistin.png" alt="Elderly care" style="max-width:64px; border-radius:0.75rem; box-shadow:0 2px 12px rgba(0,0,0,0.10);">
+                                <img src="Indian aaya assistin.png" alt="Nurse" style="max-width:64px; border-radius:0.75rem; box-shadow:0 2px 12px rgba(0,0,0,0.10);">
                             </div>
-                            <h3 class="text-xl font-semibold mb-3 text-center">Elderly care</h3>
+                            <h3 class="text-xl font-semibold mb-3 text-center">Nurse/Elderly Care</h3>
                         </div>
                         
-                        <!-- Drivers removed -->
+                        <!-- Drivers -->
+                        <div class="service-card service-card-animated bg-white p-6 rounded-lg shadow-md flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 px-3">
+                            <div class="mb-4 flex justify-center">
+                                <img src="Indian driver graphi.png" alt="Professional Driver" style="max-width:64px; border-radius:0.75rem; box-shadow:0 2px 12px rgba(0,0,0,0.10);">
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3 text-center">Professional Drivers</h3>
+                        </div>
                         
                         <!-- Restaurant Staff -->
                         <div class="service-card service-card-animated bg-white p-6 rounded-lg shadow-md flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 px-3">
@@ -728,7 +698,13 @@
                             <h3 class="text-xl font-semibold mb-3 text-center">Restaurant Service Staff</h3>
                         </div>
                         
-                        <!-- Japa Maid removed -->
+                        <!-- Japa Maid -->
+                        <div class="service-card service-card-animated bg-white p-6 rounded-lg shadow-md flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 px-3">
+                            <div class="mb-4 flex justify-center">
+                                <img src="Indian manager illus.png" alt="Japa Maid" style="max-width:64px; border-radius:0.75rem; box-shadow:0 2px 12px rgba(0,0,0,0.10);">
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3 text-center">Japa Maid</h3>
+                        </div>
                     </div>
                 </div>
                 
@@ -752,60 +728,43 @@
             <div class="mb-16">
                 <p class="text-sm uppercase tracking-widest text-[#800000] text-center mb-3">24 Hours</p>
                 <h3 class="text-2xl sm:text-3xl text-center mb-12 gates-heading" style="font-weight:400;">Full-Time Services</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
-                    <!-- Basic (Left) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+                    <!-- Premium -->
                     <div class="pricing-card bg-[#800000] text-white p-10 rounded hover:shadow-xl transition-shadow duration-300 slide-in-left stagger-1">
                         <div class="text-center">
-                            <p class="text-sm uppercase tracking-widest opacity-80 mb-4">Tier 1</p>
-                            <h4 class="text-2xl mb-8 gates-heading font-light">Basic</h4>
-                            <div class="text-5xl font-light mb-2">₹<span class="counter" data-target="18000" data-format="k">0</span></div>
+                            <p class="text-sm uppercase tracking-widest opacity-80 mb-4">Tier A</p>
+                            <h4 class="text-2xl mb-8 gates-heading font-light">Premium</h4>
+                            <div class="text-6xl font-light mb-2">₹<span class="counter" data-target="40000">0</span></div>
                             <p class="text-sm mb-8 opacity-70">per month</p>
                             <div class="border-t border-white/20 pt-6">
-                                <p class="text-lg">0-1 years experience</p>
-                                <p class="text-sm opacity-70 mt-3">Fee: 10%</p>
+                                <p class="text-lg">5+ Years Experience</p>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Standard -->
-                    <div class="pricing-card bg-[#800000] text-white p-10 rounded hover:shadow-xl transition-shadow duration-300 scale-in stagger-2">
+                    <div class="pricing-card bg-[#800000] text-white p-10 rounded relative hover:shadow-xl transition-shadow duration-300 scale-in stagger-2">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#d9a24a] text-white px-5 py-1.5 rounded text-xs font-semibold uppercase tracking-wider">Most Popular</div>
                         <div class="text-center">
-                            <p class="text-sm uppercase tracking-widest opacity-80 mb-4">Tier 2</p>
+                            <p class="text-sm uppercase tracking-widest opacity-80 mb-4">Tier B</p>
                             <h4 class="text-2xl mb-8 gates-heading font-light">Standard</h4>
-                            <div class="text-5xl font-light mb-2">₹<span class="counter" data-target="22000" data-format="k">0</span>-<span class="counter" data-target="25000" data-format="k">0</span></div>
+                            <div class="text-6xl font-light mb-2">₹<span class="counter" data-target="30000">0</span></div>
                             <p class="text-sm mb-8 opacity-70">per month</p>
                             <div class="border-t border-white/20 pt-6">
-                                <p class="text-lg">1-3 years experience</p>
-                                <p class="text-sm opacity-70 mt-3">Fee: 12.5%</p>
+                                <p class="text-lg">3-5 Years Experience</p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Premium -->
-                    <div class="pricing-card bg-[#800000] text-white p-10 rounded relative hover:shadow-xl transition-shadow duration-300 bounce-in stagger-3">
-                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#d9a24a] text-white px-5 py-1.5 rounded text-xs font-semibold uppercase tracking-wider">Recommended</div>
+                    <!-- Basic -->
+                    <div class="pricing-card bg-[#800000] text-white p-10 rounded hover:shadow-xl transition-shadow duration-300 slide-in-right stagger-3">
                         <div class="text-center">
-                            <p class="text-sm uppercase tracking-widest opacity-80 mb-4">Tier 3</p>
-                            <h4 class="text-2xl mb-8 gates-heading font-light">Premium</h4>
-                            <div class="text-5xl font-light mb-2">₹<span class="counter" data-target="25000" data-format="k">0</span>-<span class="counter" data-target="30000" data-format="k">0</span></div>
+                            <p class="text-sm uppercase tracking-widest opacity-80 mb-4">Tier C</p>
+                            <h4 class="text-2xl mb-8 gates-heading font-light">Basic</h4>
+                            <div class="text-6xl font-light mb-2">₹<span class="counter" data-target="20000">0</span></div>
                             <p class="text-sm mb-8 opacity-70">per month</p>
                             <div class="border-t border-white/20 pt-6">
-                                <p class="text-lg">3-5 years experience</p>
-                                <p class="text-sm opacity-70 mt-3">Fee: 12.5%</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Expert (Right) -->
-                    <div class="pricing-card bg-[#800000] text-white p-10 rounded hover:shadow-xl transition-shadow duration-300 slide-in-right stagger-4">
-                        <div class="text-center">
-                            <p class="text-sm uppercase tracking-widest opacity-80 mb-4">Tier 4</p>
-                            <h4 class="text-2xl mb-8 gates-heading font-light">Expert</h4>
-                            <div class="text-5xl font-light mb-2">₹<span class="counter" data-target="30000" data-format="k">0</span>+</div>
-                            <p class="text-sm mb-8 opacity-70">per month</p>
-                            <div class="border-t border-white/20 pt-6">
-                                <p class="text-lg">5+ years experience</p>
-                                <p class="text-sm opacity-70 mt-3">Fee: 15%</p>
+                                <p class="text-lg">1-3 Years Experience</p>
                             </div>
                         </div>
                     </div>
@@ -883,17 +842,14 @@
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
                     <p class="text-sm tracking-widest uppercase text-[#800000] mb-6">Knowledge Partner</p>
-                    <h2 class="text-3xl md:text-4xl text-gray-900 mb-6 gates-heading">Saath Facilitators Private Limited</h2>
-                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                        <strong>Saath Facilitators Private Limited</strong> is a social enterprise based in Ahmedabad, Gujarat. Established in 2010 as an initiative of the Saath Charitable Trust, its primary mission is to empower individuals from economically weaker sections by providing them with skill development opportunities and connecting them to dignified employment in urban households. This approach not only uplifts marginalized communities but also delivers reliable, high-quality domestic services to middle- and upper-income families.
-                    </p>
-                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                        Saath Facilitators offers a range of professional, home-based services. These services assist informal workers through training, while also providing reliable support to urban middle- and upper-middle-class families.
-                    </p>
-                    <a href="https://saath.org/saath-facilitators-pvt-ltd" target="_blank" rel="noopener" class="inline-block mt-4 text-[#800000] border-b border-[#800000] pb-1 hover:opacity-70 transition text-lg">Learn more about Saath Facilitators →</a>
+                    <h2 class="text-3xl md:text-4xl text-gray-900 mb-6 gates-heading">Strategic Partnerships</h2>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">We collaborate with industry leaders and educational institutions to enhance our training programs and service delivery standards.</p>
+                    <div class="bg-gray-50 p-8 rounded">
+                        <p class="text-lg text-gray-600">Partnership details will be shared soon.</p>
+                    </div>
                 </div>
                 <div class="flex justify-center">
-                    <img src="https://saath.org/assets/images/Logo.png" alt="Saath Facilitators Logo" class="w-64 h-auto rounded shadow-md bg-white p-4" style="box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+                    <img src="https://i.pinimg.com/originals/17/44/1e/17441ef826077986a1ee601f45e6bdfa.gif" alt="Knowledge Partner Graphic" class="w-full max-w-md rounded" style="box-shadow:0 4px 24px rgba(0,0,0,0.08);">
                 </div>
             </div>
         </div>
@@ -1000,12 +956,13 @@
                         <div>
                             <select name="service" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-[#800000] focus:outline-none">
                                 <option value="">Select Service</option>
-                                <option value="Cook">Cook</option>
+                                <option value="Professional Cook">Professional Cook</option>
                                 <option value="Housekeeper">Housekeeper</option>
                                 <option value="Nanny">Nanny</option>
-                                <option value="Elderly care">Elderly care</option>
-                                <!-- Driver option removed -->
+                                <option value="Nurse/Elderly Care">Nurse/Elderly Care</option>
+                                <option value="Driver">Driver</option>
                                 <option value="Restaurant Staff">Restaurant Staff</option>
+                                <option value="Japa Maid">Japa Maid</option>
                             </select>
                         </div>
                         <div>
@@ -1029,7 +986,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center mb-12 pb-12 border-b border-gray-700">
                 <div class="flex items-center mb-6 md:mb-0">
                     <div class="w-16 h-16 rounded flex items-center justify-center mr-4 overflow-hidden">
-                        <img src="ChatGPT Image Jan 12, 2026, 04_19_04 PM.png" alt="My Sahayak logo" class="w-full h-full object-contain">
+                        <img src="Screenshot 2025-09-13 232706.png" alt="My Sahayak logo" class="w-full h-full object-contain">
                     </div>
                     <div>
                         <h3 class="text-xl gates-heading">My Sahayak</h3>
@@ -1239,29 +1196,18 @@
             }
         });
 
-        // Number counter animation (supports optional data-format="k" to show '22k' style)
+        // Number counter animation
         function animateCounter(element, target, duration = 2000) {
             let start = 0;
-            const increment = target / (duration / 16); // ~60fps
-
-            const format = element.getAttribute('data-format');
-
-            function render(value) {
-                if (format === 'k') {
-                    const k = Math.floor(value / 1000);
-                    element.textContent = k + 'k';
-                } else {
-                    element.textContent = Math.floor(value).toLocaleString();
-                }
-            }
-
+            const increment = target / (duration / 16); // 60fps
+            
             function updateCounter() {
                 start += increment;
                 if (start < target) {
-                    render(start);
+                    element.textContent = Math.floor(start).toLocaleString();
                     requestAnimationFrame(updateCounter);
                 } else {
-                    render(target);
+                    element.textContent = target.toLocaleString();
                 }
             }
             updateCounter();

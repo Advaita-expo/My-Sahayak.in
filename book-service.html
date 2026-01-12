@@ -164,46 +164,53 @@
             <div class="form-step" data-step="2">
                 <h2 class="text-2xl gates-heading text-gray-900 mb-2">Choose Your Plan</h2>
                 <p class="text-gray-600 mb-8">Select a service tier based on experience level</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <label class="tier-option border-2 border-gray-200 rounded-lg p-6 text-center bg-white">
-                        <input type="radio" name="tier" value="premium" class="sr-only">
-                        <p class="text-xs uppercase tracking-widest text-[#800000] mb-2">Tier A</p>
-                        <h3 class="text-xl gates-heading text-gray-900 mb-4">Premium</h3>
-                        <div class="text-4xl font-light text-[#800000] mb-1">₹40,000</div>
-                        <p class="text-sm text-gray-500 mb-4">per month</p>
-                        <div class="border-t pt-4">
-                            <p class="text-gray-700">5+ years experience</p>
-                            <p class="text-sm text-gray-500 mt-2">Highly skilled professionals</p>
-                        </div>
-                    </label>
-                    
-                    <label class="tier-option border-2 border-[#d9a24a] rounded-lg p-6 text-center bg-white relative">
-                        <input type="radio" name="tier" value="standard" class="sr-only">
-                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#d9a24a] text-white px-3 py-1 rounded text-xs font-semibold uppercase">Popular</div>
-                        <p class="text-xs uppercase tracking-widest text-[#800000] mb-2">Tier B</p>
-                        <h3 class="text-xl gates-heading text-gray-900 mb-4">Standard</h3>
-                        <div class="text-4xl font-light text-[#800000] mb-1">₹30,000</div>
-                        <p class="text-sm text-gray-500 mb-4">per month</p>
-                        <div class="border-t pt-4">
-                            <p class="text-gray-700">3-5 years experience</p>
-                            <p class="text-sm text-gray-500 mt-2">Well-trained professionals</p>
-                        </div>
-                    </label>
-                    
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <label class="tier-option border-2 border-gray-200 rounded-lg p-6 text-center bg-white">
                         <input type="radio" name="tier" value="basic" class="sr-only">
-                        <p class="text-xs uppercase tracking-widest text-[#800000] mb-2">Tier C</p>
+                        <p class="text-xs uppercase tracking-widest text-[#800000] mb-2">Tier 1</p>
                         <h3 class="text-xl gates-heading text-gray-900 mb-4">Basic</h3>
-                        <div class="text-4xl font-light text-[#800000] mb-1">₹20,000</div>
+                        <div class="text-4xl font-light text-[#800000] mb-1">₹18k</div>
+                        <p class="text-sm text-gray-500 mb-4">per month</p>
+                        <div class="border-t pt-4">
+                            <p class="text-gray-700">0-1 years experience</p>
+                            <p class="text-sm text-gray-500 mt-2">Fee: 10%</p>
+                        </div>
+                    </label>
+                    <label class="tier-option border-2 border-gray-200 rounded-lg p-6 text-center bg-white">
+                        <input type="radio" name="tier" value="standard" class="sr-only">
+                        <p class="text-xs uppercase tracking-widest text-[#800000] mb-2">Tier 2</p>
+                        <h3 class="text-xl gates-heading text-gray-900 mb-4">Standard</h3>
+                        <div class="text-4xl font-light text-[#800000] mb-1">₹22k-25k</div>
                         <p class="text-sm text-gray-500 mb-4">per month</p>
                         <div class="border-t pt-4">
                             <p class="text-gray-700">1-3 years experience</p>
-                            <p class="text-sm text-gray-500 mt-2">Trained & verified staff</p>
+                            <p class="text-sm text-gray-500 mt-2">Fee: 12.5%</p>
+                        </div>
+                    </label>
+                    <label class="tier-option border-2 border-[#d9a24a] rounded-lg p-6 text-center bg-white relative">
+                        <input type="radio" name="tier" value="premium" class="sr-only">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#d9a24a] text-white px-3 py-1 rounded text-xs font-semibold uppercase">Recommended</div>
+                        <p class="text-xs uppercase tracking-widest text-[#800000] mb-2">Tier 3</p>
+                        <h3 class="text-xl gates-heading text-gray-900 mb-4">Premium</h3>
+                        <div class="text-4xl font-light text-[#800000] mb-1">₹25k-30k</div>
+                        <p class="text-sm text-gray-500 mb-4">per month</p>
+                        <div class="border-t pt-4">
+                            <p class="text-gray-700">3-5 years experience</p>
+                            <p class="text-sm text-gray-500 mt-2">Fee: 12.5%</p>
+                        </div>
+                    </label>
+                    <label class="tier-option border-2 border-gray-200 rounded-lg p-6 text-center bg-white">
+                        <input type="radio" name="tier" value="expert" class="sr-only">
+                        <p class="text-xs uppercase tracking-widest text-[#800000] mb-2">Tier 4</p>
+                        <h3 class="text-xl gates-heading text-gray-900 mb-4">Expert</h3>
+                        <div class="text-4xl font-light text-[#800000] mb-1">₹30k+</div>
+                        <p class="text-sm text-gray-500 mb-4">per month</p>
+                        <div class="border-t pt-4">
+                            <p class="text-gray-700">5+ years experience</p>
+                            <p class="text-sm text-gray-500 mt-2">Fee: 15%</p>
                         </div>
                     </label>
                 </div>
-                
                 <div class="mt-8 flex justify-between">
                     <button type="button" class="prev-btn text-gray-600 px-6 py-3 rounded font-semibold hover:text-gray-900 transition">
                         ← Back
@@ -458,17 +465,18 @@
                 'nanny': 'Nanny',
                 'nurse': 'Elderly care'
             };
-            
+            // Updated for 4 tiers
             const tierPrices = {
-                'premium': '₹40,000/month',
-                'standard': '₹30,000/month',
-                'basic': '₹20,000/month'
+                'basic': '₹18,000/month',
+                'standard': '₹22,000-25,000/month',
+                'premium': '₹25,000-30,000/month',
+                'expert': '₹30,000+/month'
             };
-            
             const tierNames = {
-                'premium': 'Premium (Tier A)',
-                'standard': 'Standard (Tier B)',
-                'basic': 'Basic (Tier C)'
+                'basic': 'Basic (Tier 1)',
+                'standard': 'Standard (Tier 2)',
+                'premium': 'Premium (Tier 3)',
+                'expert': 'Expert (Tier 4)'
             };
 
             const service = form.querySelector('input[name="service"]:checked')?.value;
@@ -513,16 +521,18 @@
                 'nurse': 'Elderly care'
             };
             
+            // Updated for 4 tiers
             const tierPrices = {
-                'premium': '₹40,000/month',
-                'standard': '₹30,000/month',
-                'basic': '₹20,000/month'
+                'basic': '₹18,000/month',
+                'standard': '₹22,000-25,000/month',
+                'premium': '₹25,000-30,000/month',
+                'expert': '₹30,000+/month'
             };
-            
             const tierNames = {
-                'premium': 'Premium (Tier A)',
-                'standard': 'Standard (Tier B)',
-                'basic': 'Basic (Tier C)'
+                'basic': 'Basic (Tier 1)',
+                'standard': 'Standard (Tier 2)',
+                'premium': 'Premium (Tier 3)',
+                'expert': 'Expert (Tier 4)'
             };
             
             const service = form.querySelector('input[name="service"]:checked')?.value;
