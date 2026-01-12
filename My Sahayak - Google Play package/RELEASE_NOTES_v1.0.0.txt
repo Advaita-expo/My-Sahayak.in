@@ -1,0 +1,12 @@
+My Sahayak — Release v1.0.0
+
+What's new:
+- Initial public release of My Sahayak.
+- Book verified domestic staff (maids, cooks and nannies).
+- Improved UI and faster booking flow.
+- Bug fixes and stability improvements.
+
+Notes for testers:
+- Please verify booking flow end-to-end.
+- Test on Android 11, 12, 13 if available.
+- Report issues to info@mysahayak.in with device model and OS version.

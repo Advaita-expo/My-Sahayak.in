@@ -13,9 +13,7 @@ const urlsToCache = [
   '/Indian maid graphic .png',
   '/Indian nanny graphic.png',
   '/Indian aaya assistin.png',
-  '/Indian driver graphi.png',
   '/Indian restaurant st.png',
-  '/Indian manager illus.png',
   '/istockphoto-2168774111-612x612.jpg'
 ];
 
@@ -34,6 +32,26 @@ self.addEventListener('install', event => {
   self.skipWaiting();
 });
 
+// Listen for waiting service worker and notify clients
+self.addEventListener('waiting', () => {
+  self.clients.matchAll({ type: 'window' }).then(clients => {
+    clients.forEach(client => {
+      client.postMessage({ type: 'UPDATE_AVAILABLE' });
+    });
+  });
+});
+
+// Listen for new service worker activation and notify clients
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    self.clients.matchAll({ type: 'window' }).then(clients => {
+      clients.forEach(client => {
+        client.postMessage({ type: 'UPDATED' });
+      });
+    })
+  );
+});
+
 // Activate event - clean up old caches
 self.addEventListener('activate', event => {
   event.waitUntil(
@@ -49,6 +67,12 @@ self.addEventListener('activate', event => {
     })
   );
   self.clients.claim();
+  // Notify clients about update
+  self.clients.matchAll({ type: 'window' }).then(clients => {
+    clients.forEach(client => {
+      client.postMessage({ type: 'UPDATED' });
+    });
+  });
 });
 
 // Fetch event - serve from cache, fallback to network
