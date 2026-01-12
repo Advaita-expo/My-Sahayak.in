@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mysahayak-v1';
+const CACHE_NAME = 'mysahayak-v2';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -23,7 +23,9 @@ self.addEventListener('install', event => {
     caches.open(CACHE_NAME)
       .then(cache => {
         console.log('Opened cache');
-        return cache.addAll(urlsToCache);
+        return cache.addAll(urlsToCache).catch(err => {
+          console.log('Some resources failed to cache:', err);
+        });
       })
       .catch(err => {
         console.log('Cache install error:', err);
@@ -44,17 +46,6 @@ self.addEventListener('waiting', () => {
 // Listen for new service worker activation and notify clients
 self.addEventListener('activate', event => {
   event.waitUntil(
-    self.clients.matchAll({ type: 'window' }).then(clients => {
-      clients.forEach(client => {
-        client.postMessage({ type: 'UPDATED' });
-      });
-    })
-  );
-});
-
-// Activate event - clean up old caches
-self.addEventListener('activate', event => {
-  event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
@@ -64,15 +55,15 @@ self.addEventListener('activate', event => {
           }
         })
       );
+    }).then(() => {
+      return self.clients.matchAll({ type: 'window' }).then(clients => {
+        clients.forEach(client => {
+          client.postMessage({ type: 'UPDATED' });
+        });
+      });
     })
   );
   self.clients.claim();
-  // Notify clients about update
-  self.clients.matchAll({ type: 'window' }).then(clients => {
-    clients.forEach(client => {
-      client.postMessage({ type: 'UPDATED' });
-    });
-  });
 });
 
 // Fetch event - serve from cache, fallback to network
