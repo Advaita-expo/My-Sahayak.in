@@ -1,56 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Privacy Policy — My Sahayak</title>
-  <meta name="description" content="Privacy policy for My Sahayak domestic staffing services">
-  <link rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy & Terms - My Sahayak</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-maroon': '#7a0f18',
+                        'brand-deep': '#800000',
+                        'accent-gold': '#d9a24a'
+                    },
+                    fontFamily: {
+                        'georgia': ['Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --brand-maroon: #7a0f18;
+            --brand-deep: #800000;
+            --accent-gold: #d9a24a;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(122, 15, 24, 0.9) 0%, rgba(128, 0, 0, 0.9) 100%);
+        }
+
+        .section-divider {
+            border-top: 2px solid var(--accent-gold);
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
 </head>
-<body>
-  <main style="max-width:900px;margin:2rem auto;font-family:Arial,Helvetica,sans-serif;padding:1rem;">
-    <h1>Privacy Policy</h1>
-    <p>Last updated: January 12, 2026</p>
+<body class="smooth-scroll bg-gray-900 text-gray-100">
 
-    <h2>1. Who we are</h2>
-    <p>My Sahayak ("we", "us", "our") operates the website and service at <a href="https://mysahayak.in">https://mysahayak.in</a>. For privacy questions, contact: support@mysahayak.in</p>
+    <!-- Navigation Header -->
+    <header class="bg-gray-900 shadow-lg sticky top-0 z-50 h-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex-shrink-0 h-full flex items-center">
+                <a href="index.html" class="h-full flex items-center">
+                    <img src="ChatGPT Image Jan 12, 2026, 04_19_04 PM.png" alt="My Sahayak Logo" 
+                         class="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain">
+                </a>
+            </div>
 
-    <h2>2. Information we collect</h2>
-    <ul>
-      <li><strong>Account information:</strong> name, email, phone number.</li>
-      <li><strong>Booking details:</strong> service type, schedule, address.</li>
-      <li><strong>Payment information:</strong> we use third-party payment processors and do not store full payment credentials on our servers.</li>
-      <li><strong>Device & usage data:</strong> IP address, browser, device type, analytics data for improving service.</li>
-    </ul>
+            <!-- Navigation Menu -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-300 hover:text-accent-gold transition duration-300">Home</a>
+                <a href="services.html" class="text-gray-300 hover:text-accent-gold transition duration-300">Services</a>
+                <a href="about.html" class="text-gray-300 hover:text-accent-gold transition duration-300">About</a>
+                <a href="training.html" class="text-gray-300 hover:text-accent-gold transition duration-300">Training</a>
+                <a href="book-service.html" class="bg-brand-deep text-white px-4 py-2 rounded hover:bg-brand-maroon transition duration-300">Book Now</a>
+            </nav>
 
-    <h2>3. How we use information</h2>
-    <p>We use data to provide services, process bookings and payments, communicate with you, verify staff, and improve the platform. We may send transactional messages (booking confirmations) and optional marketing messages if you opt-in.</p>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-accent-gold hover:text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
 
-    <h2>4. Sharing and disclosure</h2>
-    <p>We share necessary information with:</p>
-    <ul>
-      <li>Payment processors (for payment processing)</li>
-      <li>Background check & verification providers</li>
-      <li>Law enforcement when required by law</li>
-    </ul>
+    <!-- Hero Section -->
+    <section class="hero-gradient py-16 sm:py-20 lg:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="font-georgia text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+                    Legal Information
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-200">
+                    Privacy Policy & Terms & Conditions
+                </p>
+            </div>
+        </div>
+    </section>
 
-    <h2>5. Data retention</h2>
-    <p>We retain data as long as needed to provide services and to comply with legal obligations. You can request deletion at any time (see contact).</p>
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
 
-    <h2>6. Your rights</h2>
-    <p>You may access, correct, or request deletion of your personal data by emailing support@mysahayak.in. We will respond within a reasonable timeframe.</p>
+        <!-- Privacy Policy Section -->
+        <section class="bg-gray-800 rounded-lg p-8 lg:p-10 mb-12 shadow-xl">
+            <h2 class="font-georgia text-3xl sm:text-4xl font-bold text-accent-gold mb-6">Privacy Policy</h2>
 
-    <h2>7. Security</h2>
-    <p>We use industry-standard security measures to protect personal data. No method is 100% secure; please use strong passwords and keep account credentials private.</p>
+            <div class="space-y-6 text-gray-300 leading-relaxed">
 
-    <h2>8. Children's privacy</h2>
-    <p>Our services are not intended for children under 13. We do not knowingly collect their personal information.</p>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">1. Who We Are</h3>
+                    <p>My Sahayak ("we," "us," "our," or "Company") operates the website and services at <a href="https://mysahayak.in" class="text-accent-gold hover:underline">https://mysahayak.in</a>. We are committed to protecting your privacy and ensuring you have a positive experience on our platform.</p>
+                    <p class="mt-2"><span class="text-accent-gold">Privacy Contact:</span> support@mysahayak.in</p>
+                </div>
 
-    <h2>9. Changes to this policy</h2>
-    <p>We may update this policy. We will post changes on this page with an updated date.</p>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">2. Information We Collect</h3>
+                    <p class="mb-3"><span class="font-semibold text-accent-gold">2.1 Account Information:</span></p>
+                    <ul class="list-disc list-inside space-y-2 ml-4 mb-3">
+                        <li>Full name and contact information (email, phone number)</li>
+                        <li>Physical address and location data</li>
+                        <li>Account login credentials</li>
+                    </ul>
+                    <p class="mb-3"><span class="font-semibold text-accent-gold">2.2 Booking Details:</span></p>
+                    <ul class="list-disc list-inside space-y-2 ml-4 mb-3">
+                        <li>Service type and preferences</li>
+                        <li>Scheduled dates and times</li>
+                        <li>Special requirements or notes</li>
+                    </ul>
+                    <p class="mb-3"><span class="font-semibold text-accent-gold">2.3 Payment Information:</span></p>
+                    <ul class="list-disc list-inside space-y-2 ml-4 mb-3">
+                        <li>We use third-party payment processors and do not store full payment credentials on our servers</li>
+                        <li>Transaction history and billing information</li>
+                    </ul>
+                    <p class="mb-3"><span class="font-semibold text-accent-gold">2.4 Device & Usage Data:</span></p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>IP address, browser type, and device information</li>
+                        <li>Pages visited and time spent on site</li>
+                        <li>Analytics data for improving our service</li>
+                        <li>Cookies and tracking technologies</li>
+                    </ul>
+                </div>
 
-    <h2>Contact</h2>
-    <p>For privacy inquiries: support@mysahayak.in</p>
-  </main>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">3. How We Use Information</h3>
+                    <p class="mb-3">We use collected data for the following purposes:</p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>Providing and fulfilling our services</li>
+                        <li>Processing bookings and payments</li>
+                        <li>Communicating with you about your account and bookings</li>
+                        <li>Verifying the identity of service providers and users</li>
+                        <li>Sending transactional messages (booking confirmations, updates)</li>
+                        <li>Sending marketing messages (if you opt-in)</li>
+                        <li>Improving our platform and service quality</li>
+                        <li>Conducting analytics and research</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">4. Sharing and Disclosure</h3>
+                    <p class="mb-3">We share information with trusted partners only when necessary:</p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>Payment processors (for payment processing)</li>
+                        <li>Background check and verification providers</li>
+                        <li>Law enforcement when required by law</li>
+                        <li>Service partners for fulfilling bookings (with your consent)</li>
+                    </ul>
+                    <p class="mt-3"><span class="font-semibold text-accent-gold">We do not sell, trade, or rent your personal information to third parties.</span></p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">5. Data Retention</h3>
+                    <p>We retain your data as long as needed to provide services and comply with legal obligations. You may request deletion of your account and associated data at any time by contacting us at support@mysahayak.in. We will respond within a reasonable timeframe.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">6. Your Rights</h3>
+                    <p class="mb-3">You have the following rights regarding your personal data:</p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li><strong>Right to Access:</strong> Request a copy of your personal data</li>
+                        <li><strong>Right to Correct:</strong> Update or correct inaccurate information</li>
+                        <li><strong>Right to Deletion:</strong> Request deletion of your data</li>
+                        <li><strong>Right to Opt-Out:</strong> Unsubscribe from marketing communications</li>
+                        <li><strong>Right to Data Portability:</strong> Request your data in a portable format</li>
+                    </ul>
+                    <p class="mt-3">To exercise these rights, email: <span class="text-accent-gold font-semibold">support@mysahayak.in</span></p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">7. Security</h3>
+                    <p>We implement industry-standard security measures to protect your personal data, including SSL encryption, secure password policies, and regular security audits. However, no transmission method over the internet is 100% secure. We encourage you to use strong passwords and keep your account credentials confidential.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">8. Cookies & Tracking Technologies</h3>
+                    <p>Our website uses cookies to enhance your browsing experience. Cookies help us remember your preferences and understand how you use our site. You can control cookie settings through your browser, though disabling cookies may affect site functionality.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">9. Third-Party Links</h3>
+                    <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of external sites. We encourage you to review their privacy policies before sharing your information.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">10. Children's Privacy</h3>
+                    <p>Our services are not directed to children under 13 years old. We do not knowingly collect information from children under 13. If we become aware of such collection, we will take immediate action to delete the information.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">11. Changes to This Policy</h3>
+                    <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated effective date. Your continued use of our services constitutes acceptance of the updated Privacy Policy.</p>
+                </div>
+
+                <p class="text-sm text-gray-400 mt-8 pt-6 border-t border-gray-700">Last Updated: January 2025</p>
+
+            </div>
+        </section>
+
+        <!-- Terms & Conditions Section -->
+        <section class="bg-gray-800 rounded-lg p-8 lg:p-10 shadow-xl">
+            <h2 class="font-georgia text-3xl sm:text-4xl font-bold text-accent-gold mb-6">Terms & Conditions</h2>
+
+            <div class="space-y-6 text-gray-300 leading-relaxed">
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">1. Acceptance of Terms</h3>
+                    <p>By accessing and using My Sahayak's website and services, you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to abide by these terms, please do not use this service.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">2. Use License</h3>
+                    <p class="mb-3">Permission is granted to temporarily download and view the materials (information or software) on My Sahayak's website for personal, non-commercial transitory viewing only. Under this license, you may not:</p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>Modify or copy the materials</li>
+                        <li>Use materials for any commercial purpose or public display</li>
+                        <li>Attempt to decompile or reverse engineer any software</li>
+                        <li>Remove copyright or other proprietary notations</li>
+                        <li>Transfer materials to another person or "mirror" on other servers</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">3. Disclaimer</h3>
+                    <p>The materials on My Sahayak's website are provided "as is" without warranties. We make no representations or warranties, expressed or implied, and hereby disclaim all warranties including merchantability, fitness for a particular purpose, or non-infringement of intellectual property rights.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">4. Service Booking Terms</h3>
+                    <p class="mb-3">When booking services through My Sahayak:</p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>You must provide accurate and complete information</li>
+                        <li>You agree to pay the quoted service fees</li>
+                        <li>Cancellations must be made at least 24 hours before the scheduled service</li>
+                        <li>We reserve the right to cancel services if payment is not received</li>
+                        <li>Service providers must be treated with respect and dignity</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">5. Payment Terms</h3>
+                    <p class="mb-3">By making a payment, you warrant that:</p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>You are the authorized user of the payment method</li>
+                        <li>All payment information is accurate and complete</li>
+                        <li>You will pay all amounts due</li>
+                        <li>Payment information will not be used for unauthorized purposes</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">6. Data Retention Policy</h3>
+                    <p>We retain data as long as needed to provide services and comply with legal obligations. You can request deletion of your account and data at any time by contacting support@mysahayak.in.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">7. User Responsibilities</h3>
+                    <p class="mb-3">Users of My Sahayak agree to:</p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>Use the service only for lawful and legitimate purposes</li>
+                        <li>Not harass, threaten, or intimidate service providers or staff</li>
+                        <li>Maintain confidentiality of login credentials and account access</li>
+                        <li>Report any unauthorized account access immediately</li>
+                        <li>Comply with all applicable laws and regulations</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">8. Limitation of Liability</h3>
+                    <p>To the fullest extent permitted by law, My Sahayak shall not be held liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use the services or website.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">9. Modifications to Terms</h3>
+                    <p>My Sahayak reserves the right to modify these terms at any time without notice. Your continued use of the service constitutes acceptance of updated terms.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">10. Accuracy of Materials</h3>
+                    <p>The materials on My Sahayak's website may contain technical or photographic errors. We do not warrant that materials are accurate, complete, or current. We may make changes without notice.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">11. Third-Party Links</h3>
+                    <p>My Sahayak has not reviewed all linked sites and is not responsible for their contents. Inclusion of a link does not imply endorsement. Use of linked sites is at your own risk.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">12. Governing Law</h3>
+                    <p>These terms and conditions are governed by and construed in accordance with the laws of India, and you irrevocably submit to the exclusive jurisdiction of the courts in that location.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3 mt-6">13. Contact for Legal Inquiries</h3>
+                    <p class="mb-3">For legal questions or inquiries, please contact:</p>
+                    <div class="bg-gray-700 p-4 rounded mt-3">
+                        <p class="font-semibold text-accent-gold">My Sahayak Legal Team</p>
+                        <p>Email: <span class="text-accent-gold">legal@mysahayak.com</span></p>
+                        <p>General Support: <span class="text-accent-gold">support@mysahayak.in</span></p>
+                    </div>
+                </div>
+
+                <p class="text-sm text-gray-400 mt-8 pt-6 border-t border-gray-700">Last Updated: January 2025</p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-700 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h4 class="text-accent-gold font-bold mb-4">About</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-accent-gold transition">About Us</a></li>
+                        <li><a href="team.html" class="text-gray-400 hover:text-accent-gold transition">Our Team</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent-gold transition">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-accent-gold font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-400 hover:text-accent-gold transition">Our Services</a></li>
+                        <li><a href="book-service.html" class="text-gray-400 hover:text-accent-gold transition">Book Now</a></li>
+                        <li><a href="training.html" class="text-gray-400 hover:text-accent-gold transition">Training</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="text-accent-gold font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-accent-gold transition">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent-gold transition">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent-gold transition">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Partners -->
+                <div>
+                    <h4 class="text-accent-gold font-bold mb-4">Partners</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-accent-gold transition">For Partners</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent-gold transition">Join as Agent</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent-gold transition">Saath Facilitators</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h4 class="text-accent-gold font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-accent-gold transition">Privacy Policy</a></li>
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-accent-gold transition">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-center md:text-left">
+                    © 2025 My Sahayak. All rights reserved.
+                </p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-accent-gold transition">Facebook</a>
+                    <a href="#" class="text-gray-400 hover:text-accent-gold transition">Twitter</a>
+                    <a href="#" class="text-gray-400 hover:text-accent-gold transition">Instagram</a>
+                    <a href="#" class="text-gray-400 hover:text-accent-gold transition">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>

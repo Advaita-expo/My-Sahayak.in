@@ -6,7 +6,7 @@ from PIL import Image
 import os
 
 # Source image - your existing logo
-SOURCE_IMAGE = "Screenshot 2025-09-13 232706.png"
+SOURCE_IMAGE = "ChatGPT Image Jan 12, 2026, 04_19_04 PM.png"
 
 # Icon sizes needed for PWA
 ICON_SIZES = [72, 96, 128, 144, 152, 192, 384, 512]

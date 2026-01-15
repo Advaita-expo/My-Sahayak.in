@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mysahayak-v2';
+const CACHE_NAME = 'mysahayak-v3';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -8,7 +8,7 @@ const urlsToCache = [
   '/team.html',
   '/book-service.html',
   '/manifest.json',
-  '/Screenshot 2025-09-13 232706.png',
+  '/ChatGPT Image Jan 12, 2026, 04_19_04 PM.png',
   '/Indian maharaj cook .png',
   '/Indian maid graphic .png',
   '/Indian nanny graphic.png',

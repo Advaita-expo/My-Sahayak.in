@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "in.mysahayak.twa",
+        "sha256_cert_fingerprints": ["CD:ED:50:A5:7A:F3:5E:FC:3D:8F:F9:A2:B6:41:72:F0:DE:E5:63:67:49:42:5C:C0:F5:66:B6:2C:9A:03:23:BF"]
+      }
+    }]
