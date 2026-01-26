@@ -13,7 +13,6 @@ const urlsToCache = [
   '/Indian maid graphic .png',
   '/Indian nanny graphic.png',
   '/Indian aaya assistin.png',
-  '/Indian restaurant st.png',
   '/istockphoto-2168774111-612x612.jpg'
 ];
 
